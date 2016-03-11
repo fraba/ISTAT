@@ -126,4 +126,5 @@ actualiseIstatComCode <- function (vec_code_a,
     com_chg_df <- com_chg_df[order(com_chg_df$date, decreasing = T),]
     actual_istat_code[i] <- com_chg_df$new_cod_istat_comune[1]
   }
-} 
+  return(actual_istat_code)
+}
