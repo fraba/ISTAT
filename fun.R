@@ -52,14 +52,14 @@ prepareComVariationDF <- function (com_variations) {
 
 # SERVICE
 # Download new ISTAT file
-tmp_dir <- tempdir()
-download.file(variation_file, paste0(tmp_dir,"/istat.zip"))
-path <- unzip(paste0(tmp_dir,"/istat.zip"), exdir=tmp_dir)
-com_variations <-
-  read.csv(path[grepl(".csv$", path)], stringsAsFactors = FALSE, fileEncoding="latin3", sep=";")
-clean_com_variations <- prepareComVariationDF(com_variations)
-unlink(tmp_dir)
-write.csv(com_variations, "istat_com_variations.csv")
+# tmp_dir <- tempdir()
+# download.file(variation_file, paste0(tmp_dir,"/istat.zip"))
+# path <- unzip(paste0(tmp_dir,"/istat.zip"), exdir=tmp_dir)
+# com_variations <-
+#   read.csv(path[grepl(".csv$", path)], stringsAsFactors = FALSE, fileEncoding="latin3", sep=";")
+# clean_com_variations <- prepareComVariationDF(com_variations)
+# unlink(tmp_dir)
+# write.csv(com_variations, "istat_com_variations.csv")
 
 
 matchingCode <- function(code_a, name_a, vec_code_b, vec_name_b, tollerance = 1) {
