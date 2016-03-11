@@ -59,7 +59,7 @@ prepareComVariationDF <- function (com_variations) {
 #   read.csv(path[grepl(".csv$", path)], stringsAsFactors = FALSE, fileEncoding="latin3", sep=";")
 # clean_com_variations <- prepareComVariationDF(com_variations)
 # unlink(tmp_dir)
-# write.csv(com_variations, "istat_com_variations.csv")
+# write.csv(clean_com_variations, "istat_com_variations.csv")
 
 
 matchingCode <- function(code_a, name_a, vec_code_b, vec_name_b, tollerance = 2) {
