@@ -62,7 +62,7 @@ prepareComVariationDF <- function (com_variations) {
 # write.csv(com_variations, "istat_com_variations.csv")
 
 
-matchingCode <- function(code_a, name_a, vec_code_b, vec_name_b, tollerance = 1) {
+matchingCode <- function(code_a, name_a, vec_code_b, vec_name_b, tollerance = 2) {
   
   if (name_a == "") return(code_a)
   
@@ -79,8 +79,7 @@ matchingCode <- function(code_a, name_a, vec_code_b, vec_name_b, tollerance = 1)
   name_a <- gsub("Roma Capitale", "Roma", name_a)
   
   require(stringdist)
-  tollerance = 2
-  
+
   matching_code_i <- match(code_a, vec_code_b, nomatch = 0)
   
   if (matching_code_i == 0) {
@@ -107,7 +106,8 @@ matchingCode <- function(code_a, name_a, vec_code_b, vec_name_b, tollerance = 1)
 actualiseIstatComCode <- function (vec_code_a,
                                    vec_name_a,
                                    vec_code_b, 
-                                   vec_name_b) {
+                                   vec_name_b,
+                                   clean_com_variations) {
   
   prepareName <- function (x) {
     x <- gsub("^\\s+|\\s+$", "", x)
